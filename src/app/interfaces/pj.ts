@@ -4,7 +4,7 @@ import { RACE } from "../consts/race";
 import { SPEC } from "../consts/spec";
 
 export interface Pj{
-        id:string,
+        id?:number,
         name:string,
         user:string,
         lvl:number,

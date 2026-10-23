@@ -4,14 +4,18 @@ import { HttpClient } from '@angular/common/http';
 import { single } from 'rxjs';
 import { Pj } from '../interfaces/pj';
 
-@Service()
+
 @Injectable({providedIn:'root'})
     export class PjService {
+
         url=environment.url
+
         http=inject(HttpClient)
+
         pjs=signal<Pj[]>([])
         pjById=signal<Pj|null>(null)
         error=signal<string>('')
+        
         getPjs(){
             this.http.get<Pj[]>(this.url).subscribe(data=>this.pjs.set(data),error=>this.error.set(error))
         }

@@ -1,1 +1,51 @@
-<p>pj-form works!</p>
+<form [formGroup]="form" (ngSubmit)="postPj()">
+    <fieldset>
+        <legend>
+            Ingrese el nombre del pj
+        </legend>
+        <label for="input_nombre">Nombre</label>
+        <input type="text" formControlName="name" id="input_nombre">
+        @if (form.controls["name"].getError("required")&&form.controls["name"].touched) {
+            <div>
+                <p>ESte campo es obligatorio</p>
+            </div>
+        }
+
+        <legend>
+            Ingrese el user
+        </legend>
+        <label for="input_user">user</label>
+        <input type="text" formControlName="user" id="input_user">
+        @if (form.controls["user"].getError("required")&&form.controls["user"].touched) {
+            <div>
+                <p>ESte campo es obligatorio</p>
+            </div>
+        }
+
+        <legend>
+            Ingrese el lvl del pj
+        </legend>
+        <label for="input_nombre">lvl</label>
+        <input type="number" formControlName="lvl" id="input_lvl">
+        @if (form.controls["lvl"].getError("required")&&form.controls["lvl"].touched) {
+            <div>
+                <p>ESte campo es obligatorio</p>
+            </div>
+        }
+
+        <legend>
+            Seleccione la faccion del pj
+        </legend>
+        <label for="input_faccion">Faccion</label>
+        <select name="" id="input_faccion" formControlName="faction">
+            @for (f of factiones; track f) {
+                <option value="f"> {{f}}</option>
+            }
+        </select>
+        @if (form.controls["faction"].getError("required")&&form.controls["faction"].touched) {
+            <div>
+                <p>ESte campo es obligatorio</p>
+            </div>
+        }
+    </fieldset>
+</form>
