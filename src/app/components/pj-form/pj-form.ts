@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PjService } from '../../services/pj-service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   imports: [],
@@ -6,4 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './pj-form.css',
   templateUrl: './pj-form.html',
 })
-export class PjForm {}
+export class PjForm {
+  pjService=inject(PjService)
+  fb=inject(FormBuilder)
+  
+}
