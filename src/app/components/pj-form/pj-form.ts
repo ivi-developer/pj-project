@@ -21,9 +21,9 @@ export class PjForm {
       name:["",[Validators.required]],
       user:["",[Validators.required]],
       lvl:[0,[Validators.required]],
-      class:[CLASS.brujo,[Validators.required]],
       faction:[FACTION.horda,[Validators.required]],
       race:[RACE.no_muerto,[Validators.required]],
+      class:[CLASS.brujo,[Validators.required]],
       spec:[SPEC.demonologia,[Validators.required]],
   })
 

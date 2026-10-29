@@ -47,5 +47,48 @@
                 <p>ESte campo es obligatorio</p>
             </div>
         }
+
+         <legend>
+            Seleccione la raza del pj
+        </legend>
+        <label for="input_raza">Raza</label>
+        <select name="" id="input_raza" formControlName="race">
+            @for (r of razas; track r) {
+                <option value="r"> {{r}}</option>
+            }
+        </select>
+        @if (form.controls["race"].getError("required")&&form.controls["race"].touched) {
+            <div>
+                <p>ESte campo es obligatorio</p>
+            </div>
+        }
+        <legend>
+            Seleccione la clase del pj
+        </legend>
+        <label for="input_clase">clase</label>
+        <select name="" id="input_clase" formControlName="class">
+            @for (c of clases; track c) {
+                <option value="c">{{c}}</option>
+            }
+        </select>
+        @if (form.controls["class"].getError("required")&&form.controls["class"].touched) {
+            <div>
+                <p>Este campo es pbligatorio</p>
+            </div>
+        }
+
+        <legend>Ingrese la especializacion del pj</legend>
+        <label for="input_spec">spec</label>
+        <select name="" id="input_spec" formControlName="spec">
+            @for (s of specs; track s) {
+                <option value="s"> {{s}} </option>
+            }
+        </select>
+        @if (form.controls["spec"].getError('required')&&form.controls["spec"].touched) {
+            <div>
+                <p>Este campo es obligatorio</p>
+            </div>
+        }
+        <button type="submit" [disabled]="form.invalid" >Agregar</button>
     </fieldset>
 </form>

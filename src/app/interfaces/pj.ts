@@ -11,5 +11,5 @@ export interface Pj{
         class:CLASS
         faction:FACTION,
         race:RACE,
-        spec:SPEC,
+        spec:SPEC,                      
 }
